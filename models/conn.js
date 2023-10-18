@@ -1,9 +1,8 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize, DataTypes } = require('sequelize');
 
-// DB Connection Configuration
-const sequelize = new Sequelize("ecommerce", "postgres", "postgres", {
-    host: "localhost",
-    dialect: "postgres",
+const sequelize = new Sequelize('ecommerce', 'root', 'mysqlpa$$word', {
+  host: 'localhost',
+  dialect: 'mysql',
 });
 
 // Test connection function
@@ -18,4 +17,8 @@ async function testConnection() {
     }
 }
 
-module.exports = {sequelize, testConnection}
+module.exports = {
+    sequelize, 
+    testConnection, 
+    DataTypes
+}
